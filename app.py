@@ -1,6 +1,8 @@
-from flask import Flask, render_template
+from flask import render_template
+from connexion import FlaskApp
 
-app = Flask(__name__)
+app = FlaskApp(__name__)
+app.add_api("swagger.yaml")
 
 @app.route("/")
 def home():
